@@ -90,7 +90,9 @@
               </li>
             </ul>
             <!-- End Text Rotater -->
-            <img style="height: 27.625px;width: 28.5px;" src="img/torino_icon.jpeg" />
+             
+        <i class="icon-home-ico"></i>
+            <!-- <img style="height: 27.625px;width: 28.5px;" src="img/torino_icon.jpeg" /> -->
             <p class="font2">Come with family & feel the joy of mouthwatering food</p>
             <a data-scroll-nav="1" href="#" class="btn btn-gold white">DISCOVER MORE</a>
           </div>
@@ -937,7 +939,7 @@
                                     required>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-sx-12">
-                                  <input name="email" class="form-control" type="email" placeholder="email">
+                                  <input name="email" class="form-control" type="email" placeholder="email *" required>
                                 </div>
                               </div>
                             </div>
@@ -946,20 +948,20 @@
                             <div class="form-group">
                               <div class="row">
                                 <div class="col-md-6 col-sm-6 col-sx-12">
-                                  <input name="personnum" class="form-control" type="text"
-                                    placeholder="Number of Persons">
+                                  <input name="personnum" class="form-control" type="number"
+                                    placeholder="Number of Persons *" required>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-sx-12">
-                                  <input name="phone" class="form-control" type="tel" placeholder="Phone No.">
+                                  <input name="phone" class="form-control" type="tel" placeholder="Phone No. *" required>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
-                                  <input name="date" class="form-control" id="datetimepicker" placeholder="Date"
-                                    type="text">
+                                  <input name="date" class="form-control" id="datetimepicker" placeholder="Date *"
+                                    type="text" required>
                                   <i class="fa fa-calendar"></i>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
-                                  <input name="time" class="form-control" id="timepicker" placeholder="Time"
-                                    type="time">
+                                  <input name="time" class="form-control" id="timepicker" placeholder="Time *"
+                                    type="time" required>
                                   <i class="fa fa-clock-o"></i>
                                 </div>
                               </div>
@@ -1194,7 +1196,14 @@
             <!-- Flickr !-->
             <div class="col-md-3 col-sm-6 col-xs-12 flickr animated" data-animation-delay="500"
               data-animation="fadeInUp">
-              <h3>Mygestry house to Torino pizza</h3>
+              
+              <span style="color: white;">Torino </span>
+              <span class="image-span img-responsive"
+                style="height: 40px;background-image: url(img/torino_icon.jpeg);">
+                <!-- <img class="img-responsive" style="height: 40px;" src="img/torino_icon.jpeg" alt="Logo"> -->
+              </span>
+              <span style="color: white;"> Pizza</span>
+              <!-- <h3>Torino Pizza</h3> -->
               <ul id="flickrbox" class="thumbs">
               </ul>
             </div>
