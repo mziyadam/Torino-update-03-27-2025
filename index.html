@@ -90,7 +90,7 @@
               </li>
             </ul>
             <!-- End Text Rotater -->
-            <img style="height: 55.25px;width: 57px;" src="img/torino_icon.jpeg" />
+            <img style="height: 27.625px;width: 28.5px;" src="img/torino_icon.jpeg" />
             <p class="font2">Come with family & feel the joy of mouthwatering food</p>
             <a data-scroll-nav="1" href="#" class="btn btn-gold white">DISCOVER MORE</a>
           </div>
@@ -105,8 +105,24 @@
             <div id="main-menu-trigger"><i class="fa fa-bars"></i></div>
             <!-- Logo
                     ============================================= -->
-            <div id="logo"> <a href="index.html" class="light-logo"><img src="img/logo.png" alt="Logo"></a> <a
-                href="index.html" class="dark-logo"><img src="img/logo_dark.png" alt="Logo"></a> </div>
+            <div id="logo"> <a href="index.html" class="light-logo">
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+                <span style="color: white;">Torino </span>
+                <span class="image-span img-responsive"
+                  style="height: 40px;background-image: url(img/torino_icon.jpeg);">
+                  <!-- <img class="img-responsive" style="height: 40px;" src="img/torino_icon.jpeg" alt="Logo"> -->
+                </span>
+                <span style="color: white;"> Pizza</span>
+              </a> <a href="index.html" class="dark-logo">
+                <!-- <img src="img/logo_dark.png" alt="Logo"> -->
+
+                <span style="color: black;">Torino </span>
+                <span class="image-span img-responsive"
+                  style="height: 40px;background-image: url(img/torino_icon.jpeg);">
+                  <!-- <img class="img-responsive" style="height: 40px;" src="img/torino_icon.jpeg" alt="Logo"> -->
+                </span>
+                <span style="color: black;"> Pizza</span>
+              </a> </div>
             <!-- #logo end -->
             <!-- Primary Navigation
      ============================================= -->
@@ -274,7 +290,8 @@
               <!-- Menu Item -->
               <div class="menu-item col-md-4 col-sm-4 col-xs-12 animated" data-animation-delay="200"
                 data-animation="zoomIn">
-                <figure> <img class="img-responsive" src="img/relaxin.jpg" alt="RELAXING AMBIENCE" />
+                <figure> <img class="img-responsive" src="img/art-3.jpeg" style="height: 460px;"
+                    alt="RELAXING AMBIENCE" />
                   <figcaption class="text-center">
                     <div class="fig_container">
                       <h3>RELAXING AMBIENCE</h3>
@@ -287,7 +304,8 @@
               <!-- Menu Item -->
               <div class="menu-item col-md-4 col-sm-4 col-xs-12 animated" data-animation-delay="300"
                 data-animation="zoomIn">
-                <figure> <img class="img-responsive" src="img/sunday.jpg" alt="RELAXING AMBIENCE" />
+                <figure> <img class="img-responsive" src="img/art-5.jpeg" style="height: 460px;"
+                    alt="RELAXING AMBIENCE" />
                   <figcaption class="text-center">
                     <div class="fig_container">
                       <h3>SUNDAY</h3>
@@ -300,7 +318,8 @@
               <!-- Menu Item -->
               <div class="menu-item col-md-4 col-sm-4 col-xs-12 animated" data-animation-delay="400"
                 data-animation="zoomIn">
-                <figure> <img class="img-responsive" src="img/glutonfreetemp.jpg" alt="RELAXING AMBIENCE" />
+                <figure> <img class="img-responsive" src="img/pizza-4.jpeg" style="height: 460px;"
+                    alt="RELAXING AMBIENCE" />
                   <figcaption class="text-center">
                     <div class="fig_container">
                       <h3>HEALTHY FOODS</h3>
@@ -1136,35 +1155,37 @@
               <ul>
                 <li>
                   <p>Monday
-                    <time datetime="00:01">1 pm - 10 pm</time>
+                    <span class="label label-default">Closed</span>
                   </p>
                 </li>
                 <li>
                   <p>Tuesday
-                    <time datetime="00:01">1 pm - 10 pm</time>
+                    <span class="label label-default">Closed</span>
                   </p>
                 </li>
                 <li>
                   <p>Wednesday
-                    <time datetime="00:01">1 pm - Midnight</time>
+                    <time datetime="00:01">5 pm - 10.30 pm</time>
                   </p>
                 </li>
                 <li>
                   <p>Thursday
-                    <time datetime="00:01">1 pm - 10 pm</time>
+                    <time datetime="00:01">5 pm - 10.30 pm</time>
                   </p>
                 </li>
                 <li>
                   <p>Friday
-                    <time datetime="00:01">1 pm - Midnight</time>
+                    <time datetime="00:01">5 pm - 10.30 pm</time>
                   </p>
                 </li>
                 <li>
-                  <p>Saturday <span class="label label-default">Closed</span></p>
+                  <p>Saturday
+                    <time datetime="00:01">5 pm - 10.30 pm</time>
+                  </p>
                 </li>
                 <li>
                   <p>Sunday
-                    <time datetime="00:01">1 pm - 10 pm</time>
+                    <time datetime="00:01">5 pm - 10.30 pm</time>
                   </p>
                 </li>
               </ul>
@@ -1173,7 +1194,7 @@
             <!-- Flickr !-->
             <div class="col-md-3 col-sm-6 col-xs-12 flickr animated" data-animation-delay="500"
               data-animation="fadeInUp">
-              <h3>Flickr Photos 7135240@N05</h3>
+              <h3>Mygestry house to Torino pizza</h3>
               <ul id="flickrbox" class="thumbs">
               </ul>
             </div>
@@ -1832,6 +1853,17 @@
     /* Use flexbox to center content */
     align-items: center;
     /* Vertically center */
+  }
+
+  .image-span {
+    display: inline-block;
+    width: 50px;
+    /* Adjust as needed */
+    height: 50px;
+    /* Adjust as needed */
+    background-image: url('your-image.png');
+    background-size: cover;
+    background-position: center;
   }
 </style>
 
