@@ -262,7 +262,9 @@
                     <a href="https://torinopizza.com.au" target="_blank">
                       <div class="block-item animated" data-animation-delay="500" data-animation="rotateInUpLeft"> <img
                           src="img/order-food.png" style="height: 100px;width: 100px;" alt="">
-                        <h2>Online Order</h2>
+                        <h2>Online Order
+                          <br>&nbsp;
+                        </h2>
                         <p>5.00 pm 11.00 pm</p>
                       </div>
                     </a>
@@ -274,7 +276,7 @@
                     <a href="https://www.quandoo.com.au/place/torino-pizza-enmore-101274" target="_blank">
                       <div class="block-item animated" data-animation-delay="200" data-animation="rotateInDownLeft">
                         <img src="img/breakfast.png" alt="">
-                        <h2>Dine In</h2>
+                        <h2>Dine In<br>&nbsp;</h2>
                         <p>5.00 pm to 11.00 pm</p>
                       </div>
                     </a>
@@ -283,8 +285,8 @@
                   <div class="col-md-3 col-sm-6 col-xs-12 ">
                     <!-- Block item -->
                     <div class="block-item animated" data-animation-delay="300" data-animation="rotateInDownLeft"> <img
-                        src="img/lunch.png" alt="">
-                      <h2>Pick Up</h2>
+                        src="img/delivery.png" style="height: 100px;width: 100px;" alt="">
+                      <h2>Pick Up & Delivery</h2>
                       <p>5.00 pm to 11.00 pm</p>
                     </div>
                     <!-- End Block item -->
@@ -292,8 +294,8 @@
                   <div class="col-md-3 col-sm-6 col-xs-12">
                     <!-- Block item -->
                     <div class="block-item animated" data-animation-delay="400" data-animation="rotateInUpRight"> <img
-                        src="img/delivery.png" style="height: 100px;width: 100px;" alt="">
-                      <h2>Delivery</h2>
+                        src="img/lunch.png" alt="">
+                      <h2>Enmore Special</h2>
                       <p>5.00 pm to 11.00 pm</p>
                     </div>
                     <!-- End Block item -->
@@ -1052,12 +1054,11 @@
                 </div> -->
                 <div class="row">
                   <div v-for="(item, index) in newsItems" :key="index" class="news-item col-md-3 col-sm-3 col-xs-8">
-                    <figure>
-                      <img class="img-responsive" :src="item.image" :alt="item.title"
-                        style="height: 200px; width: 100%; object-fit: cover;" />
-                      <figcaption class="text-center">
+                    <!-- <figure> -->
+                    <!-- <img class="img-responsive" :src="item.image" :alt="item.title"
+                        style="height: 200px; width: 100%; object-fit: cover;" /> -->
+                    <!-- <figcaption class="text-center">
                         <div class="fig_container">
-                          <!-- <i class="fa fa-picture-o"></i> -->
                           <h3>
                             <a :href="item.link">{{ item.title }}</a>
                           </h3>
@@ -1068,9 +1069,101 @@
                         </div>
                         <span class="btn btn-gold primary-bg white">Deal {{ index + 1 }}</span>
                       </figcaption>
+                    </figure> -->
+                    <figure class="deal-card" @mouseenter="hoveredIndex = index" @mouseleave="hoveredIndex = null">
+                      <img class="img-responsive" :src="item.image" :alt="item.title" />
+
+                      <figcaption>
+                        <div class="fig_container text-center" :class="{ hovered: hoveredIndex === index }">
+                          <h3 :class="{ 'move-up': hoveredIndex === index }">
+                            <a :href="item.link">{{ item.title }}</a>
+                          </h3>
+
+                          <p class="price-text" v-show="hoveredIndex === index">{{ item.price }}</p>
+
+                          <div class="fig_content" v-show="hoveredIndex === index">
+                            <a :href="item.link">{{ item.description }}</a>
+                          </div>
+                        </div>
+
+                        <span class="btn btn-gold primary-bg white">DEAL {{ index + 1 }}</span>
+                      </figcaption>
                     </figure>
                   </div>
                 </div>
+                <style>
+                  .deal-wrapper {
+                    padding: 10px;
+                    width: 240px;
+                    display: inline-block;
+                  }
+
+                  .deal-card {
+                    position: relative;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background: #fff;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                  }
+
+                  .deal-card img {
+                    width: 100%;
+                    height: 200px;
+                    max-height: 200px !important;
+                    object-fit: cover;
+                  }
+
+                  figcaption {
+                    padding: 10px;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 180px;
+                  }
+
+                  .fig_container {
+                    transition: all 0.3s ease;
+                  }
+
+                  .fig_container h3 {
+                    font-size: 14px;
+                    line-height: 1.3;
+                    margin: 20px 0 10px;
+                    transition: transform 0.3s ease;
+                    max-height: 2.6em;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                  }
+
+                  .fig_container.hovered h3 {
+                    transform: translateY(-15px);
+                  }
+
+                  .fig_container .price-text,
+                  .fig_container .fig_content {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    font-size: 13px;
+                    color: #333;
+                  }
+
+                  .fig_container.hovered .price-text,
+                  .fig_container.hovered .fig_content {
+                    opacity: 1;
+                  }
+
+                  .btn-gold {
+                    margin-top: auto;
+                    background-color: #b89457;
+                    border: none;
+                    padding: 6px 14px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                  }
+                </style>
                 <!-- End News Item -->
               </div>
               <!-- End News Content -->
@@ -1107,7 +1200,7 @@
               <p>Torino Pizza:</p>
               <span>155 Enmore Rd, Enmore NSW 2042, Australia</span>
               <p class="mt30">Call for Reservations:<span>(02) 9557-3956</span></p>
-              <p>E-mail: <span>iran0601@yahoo.com</span> </p>
+              <p>E-mail: <span>torinoenmore@gmail.com</span> </p>
               <!-- <ul class="social mt30">
                 <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
@@ -1244,6 +1337,7 @@
     createApp({
       data() {
         return {
+          hoveredIndex: null,
           message: 'Hello Vue!',
           pizzaItems:
             [
