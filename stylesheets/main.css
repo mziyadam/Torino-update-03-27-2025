@@ -1840,7 +1840,7 @@ body.stretched #header.full-header #main-menu ul li.mega-menu .mega-menu-content
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
-	padding-top: 30%
+	padding-top: 0;
 }
 .blog figure i, .latest_news figure i, .masonary_blog figure i {
 	margin-top: -40px;
